@@ -1,0 +1,28 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/miniconda
+{
+	"name": "Deep Learning GPU",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": ".."
+	},
+	"runArgs": [
+		"--gpus=1",
+		"--privileged"
+	],
+	"features": {
+		"github-cli": "latest"
+	},
+	"remoteUser": "vscode",
+	"shutdownAction": "none",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"ms-azuretools.vscode-docker",
+				"ms-python.black-formatter",
+				"ms-toolsai.jupyter"
+			]
+		}
+	}
+}
